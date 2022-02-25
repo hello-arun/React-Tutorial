@@ -92,3 +92,7 @@ imcr
 cc
 ```
 
+# chap-06-dynamics
+
+Render color based on the values
+
