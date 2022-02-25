@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Chapter-02 First React Component
+
+We will add our first ever element to our web app.
+
+## 2.1 Install bootstrap
+
+BootStrap is used to get modern look and fell. Run this command in terminal to install bootstrap
+
+```Bash
+npm install bootstrap
+```
+
+## 2.2 create component folder
+
+It is expected to have a folder created and place all the component there.
+
+## Shortcuts
+
+```React
+imcr
+cc
+```
+
