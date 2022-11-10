@@ -1,17 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+const element = <h1>Hello World</h1> // This is jsx expression
+const root = ReactDOM.createRoot(document.getElementById('root')); // Define root element in which we wish to add the element
+root.render(element) // Where in the DOM we want to add the element
