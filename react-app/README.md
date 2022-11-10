@@ -48,4 +48,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-20-Create-React-Component` to create your first react component.
+Switch to `Chap-20-Start-From-Scratch` to create your first react component.

@@ -17,4 +17,4 @@ This will create the folder `react-app` with all the depenedencies installed ins
 
 You are now in `Chap-10-Introduction` brach. Go to [react-app](./react-app/) folder for further tutorial.
 
-If you have completed `Chap-10-Introduction` switch to `Chap-20-Create-React-Component` for next tutorial.
+If you have completed `Chap-10-Introduction` switch to `Chap-20` for next tutorial.
