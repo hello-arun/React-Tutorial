@@ -121,6 +121,54 @@ We dig somewhat more inside component that we have created. The state of the com
     }
 ```
 
+## Chapter 40 Counter-App-Contd
+
+We want to display the color based on the value of state variable `count`. If it is zero display it yellow otherwise display it blue.
+![](__ref/img-0.png)
+![](__ref/img-1.png)
+
+Since `promary` and `warning` class of bootstrap give blue and yellow color by default. So implementing this is as easy.
+
+```jsx
+    render() {
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return (
+            <React.Fragment>
+                <span style={this.styles} className={classes}>
+                    {this.formatCount()}
+                </span>
+                <button className="btn btn-secondary btn-sm">Increment</button>
+            </React.Fragment>
+        );
+    }
+```
+
+### How to add multiple list items
+
+![](__ref/list-items.png)
+This part is self explanatory except that each list item should have a unique id assigned to it.
+
+```jsx
+    state = {
+        count: 1,
+        tags: ["Arun", "Seema", "Jhinu"],
+    };
+    render() {
+            <React.Fragment>
+                <span >
+                    {this.formatCount()}
+                </span>
+                <button>Increment</button>
+                <ul>
+                    {this.state.tags.map((tag) => (<li key={tag}>{tag}</li>))}
+                </ul>
+            </React.Fragment>
+        );
+    }
+
+```
+
 ## How to run
 
 To Runs the app in the development mode.\
@@ -141,4 +189,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-40` for next chapter. We will now add dynamics to our app.
+Switch to `Chap-50` for next chapter.

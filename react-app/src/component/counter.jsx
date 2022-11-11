@@ -2,26 +2,27 @@ import React, { Component } from "react";
 
 class Counter extends Component {
     state = {
-        count: 0,
+        count: 1,
+        tags: ["Arun", "Seema", "Jhinu"],
     };
     styles = {
         fontSize: 15,
         fontWeight: "bold",
     };
     render() {
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
         return (
-            // This creates an extra div
-            // <div>
-            //     <span>{this.state.count}</span>
-            //     <button>Increment</button>
-            // </div>
-
-            // To Skip having extra div we can use
             <React.Fragment>
-                <span style={this.styles} className="badge badge-primary m-2">
+                <span style={this.styles} className={classes}>
                     {this.formatCount()}
                 </span>
                 <button className="btn btn-secondary btn-sm">Increment</button>
+                <ul>
+                    {this.state.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                    ))}
+                </ul>
             </React.Fragment>
         );
     }
