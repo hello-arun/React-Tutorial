@@ -238,8 +238,10 @@ later in `src/component/counter.jsx` we have used `this.props` to access these v
     };
 ``` 
 
-So `props` is used generally for initilization purposes. Additionally `state` variable is local a perticular component whereas `props` 
+- So `props` is used generally for initilization purposes. Additionally `state` variable is local a perticular component whereas `props` 
 have scope outside of that component also.
+
+- Also `props` are read only. Their value can not be changed inside component.
 
 ## How to run
 
