@@ -5,27 +5,27 @@ class Counter extends Component {
         count: 1,
         tags: ["Arun", "Seema", "Jhinu"],
     };
-    styles = {
-        fontSize: 15,
-        fontWeight: "bold",
-    };
+
     render() {
         let classes = "badge m-2 badge-";
         classes += this.state.count === 0 ? "warning" : "primary";
         return (
             <React.Fragment>
-                <span style={this.styles} className={classes}>
-                    {this.formatCount()}
-                </span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
-                <ul>
-                    {this.state.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
-                    ))}
-                </ul>
+                <span className={classes}>{this.formatCount()}</span>
+                <button
+                    onClick={this.handleIncrement}
+                    className="btn btn-secondary btn-sm"
+                >
+                    Increment
+                </button>
             </React.Fragment>
         );
     }
+
+    // To Bind Event Handeler
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
 
     formatCount() {
         const { count } = this.state;

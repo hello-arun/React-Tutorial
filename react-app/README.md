@@ -169,6 +169,52 @@ This part is self explanatory except that each list item should have a unique id
 
 ```
 
+## Chapter 50 Counter-App-Events
+
+Let's say we want to update the click counts whenever user clicks Increment button. Whenever user click increment button the count should increase by 1.
+
+![](__ref/event-1.png)
+
+After click on `Increment` button
+![](__ref/event-2.png)
+
+So we can see that we need to implement event handeling
+
+### Handeling Events
+
+Adding event hadeling is easy. We just have to add the method that should be called whenever user click the button and the same can be implemented as such
+
+```jsx
+    render() {
+        return (
+            <React.Fragment>
+                <span>{this.formatCount()}</span>
+                <button
+                    onClick={this.handleIncrement}
+                >
+                    Increment
+                </button>
+            </React.Fragment>
+        );
+    }
+    handleIncrement(){
+        console.log("Increment Clicked",this);
+    };
+```
+But the issue is that we can not access `this` in `handleIncrement` because by-default it is not bind to this component. The most easy solution to this problem is to use arrow function `=>` such as
+```jsx
+    handleIncrement = () =>{
+        this.state.count +=1
+        console.log("Increment Clicked",this);
+    };
+```
+But there is one more problem although we can  directly change state.count property but it will not be reflected in the website view that we are hoping for. Solution?
+```jsx
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+```
+
 ## How to run
 
 To Runs the app in the development mode.\
@@ -189,4 +235,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-50` for next chapter.
+Switch to `Chap-60` for next chapter.
