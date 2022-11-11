@@ -34,4 +34,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-30-Create-React-Component` for next chapter.
+Switch to `Chap-30` for next chapter. We will now make an complete counter-app.

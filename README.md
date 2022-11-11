@@ -17,4 +17,4 @@ This will create the folder `react-app` with all the depenedencies installed ins
 
 You are now in `Chap-20-Start-From-Scratch` brach. Go to [react-app](./react-app/) folder for tutorial.
 
-If you have completed `Chap-20` switch to `Chap-30` for next tutorial.
+If you have completed `Chap-20` switch to `Chap-30` for next tutorial We will make an `counter-app` from scratch.
