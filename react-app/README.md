@@ -1,6 +1,6 @@
 # React App
 
-***To see how this react-app was initiated go to [README.md](../README.md)***
+**_To see how this react-app was initiated go to [README.md](../README.md)_**
 
 ## File and Folder Structure
 
@@ -8,11 +8,117 @@ File and folder structures are discussed in detail in `Chapter 10`. Switch to th
 
 ## Scratching the surface
 
-we have deleted everything for the `src` folder and created `index.js` file to start from the scratch. Just read `index.js` and see how the DOM manipulation is performed in React. If you have some experiance with javascript then it is easy to realize that how easy it is in REACT. 
+Basic work flow of react was discussed in `Chapter 20`. Switch branch to `Chapter 20` to read more.
 
-Also the element declaration is in jsx which stands for java script extension. To see the old javascript equivalent code you can go to https://babeljs.io/repl .
+## Chapter 30 A-Counter-App
+
+### bootstrap
+
+We need `bootstrap` for this project and the same can be installed with.
+
+```bash
+npm i bootstrap@4.1.1
+# Newer versions are available but to strick with Tutorial this is followed.
+```
+
+### Tricks with simple react snippet
+
+-   `imrc` for direct import statement
+-   `cc` for creating class directly.
+
+### Creating component
+
+We create a folder `component` inside `src`. This is standard to put all the components inside `src/component`. How to create an empty component?
+
+-   create an empty file counter.jsx
+-   type `imrc` and `simple react snippet` addon will do the required import.
+-   After that tppe `cc` and autocompletion will create and component class. You have to name the component in multi coursor mode.
+-   You can include this component in `src/index.js` as follows
+
+```bash
+import Counter from './component/counter';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Counter/>)
+```
+
+### component
+
+We dig somewhat more inside component that we have created. The state of the component is described in `state` variable and `render` method handles and DOM rendering part.
+
+-   If multiple `html` coponents are insdie return statement always enclose them in `<div></div>` or
+
 ```jsx
-const element = <h1>Hello World</h1> // This is jsx expression
+    render() {
+        return (
+            <div>
+                <h1>Hello World</h1>
+                <button>Increment</button>
+            </div>
+        );
+    }
+```
+
+-   If you do not want to have extra `<div>` appear in your code then you can also use `React.Fragment` to enclose them.
+
+```jsx
+    render() {
+        return (
+            // To Skip having extra div we can use
+            <React.Fragment>
+                <h1>Hello World</h1>
+                <button>Increment</button>
+            </React.Fragment>
+        );
+    }
+```
+
+-   If you want to reference something from the state variable you can use curly brackets. Inside curly brackets you can write anything javascrtipt to jsx code.
+
+```jsx
+// All are valid
+                <span>{this.state.count}</span>
+                // or
+                <span>{this.formatCount()}</span>
+                // or
+                <span>{2+2}</span>
+```
+
+#### Component Styling
+
+-   You can either use bootstrap classes as you use them in html directly. such as
+
+```jsx
+<button className="btn btn-secondary btn-sm">Increment</button>
+```
+
+-   If you want to provide your own style there are two ways. Either you can define all your styles in styles variable and later include that in render method. Such as
+
+```jsx
+    styles = {
+        fontSize: 15,
+        fontWeight: "bold",
+    };
+    render() {
+        return (
+            <React.Fragment>
+                <span style={this.styles}>Hello World</span>
+                <button className="btn btn-secondary btn-sm">Increment</button>
+            </React.Fragment>
+        );
+    }
+```
+
+-   Or you can also use inline styles. by double curly brackets
+
+```jsx
+    render() {
+        return (
+            <React.Fragment>
+                <span style={{fontSize : 30}}>Hello World</span>
+                <button className="btn btn-secondary btn-sm">Increment</button>
+            </React.Fragment>
+        );
+    }
 ```
 
 ## How to run
@@ -23,6 +129,7 @@ To Runs the app in the development mode.\
 cd react-app
 npm start
 ```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## How to build
@@ -34,4 +141,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-30` for next chapter. We will now make an complete counter-app.
+Switch to `Chap-40` for next chapter. We will now add dynamics to our app.
