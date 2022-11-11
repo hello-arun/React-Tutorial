@@ -215,6 +215,32 @@ But there is one more problem although we can  directly change state.count prope
     };
 ```
 
+## Chapter 60 Multiple Components
+
+After adding multiple components website looks like this
+
+![](__ref/multi-comps.png)
+
+Watch `src/component/counters.jsx` to see how we can reuse an component multiple places. And how well it scales.
+One thing worth mentioning here is about components `props`. We discuss it here...
+
+### `props` vs `state`
+If you see in `src/component/counters.jsx` we have included multiple `Counter` component as shown. Also we have added two properties to
+this component `key` and `value`.
+
+```jsx
+<Counter key={counter.id} value={counter.value} />
+```
+later in `src/component/counter.jsx` we have used `this.props` to access these values
+```jsx
+    state = {
+        value: this.props.value,
+    };
+``` 
+
+So `props` is used generally for initilization purposes. Additionally `state` variable is local a perticular component whereas `props` 
+have scope outside of that component also.
+
 ## How to run
 
 To Runs the app in the development mode.\

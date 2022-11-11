@@ -15,6 +15,6 @@ create-react-app react-app
 ```
 This will create the folder `react-app` with all the depenedencies installed inside it. Actually this folder is the react application folder. We do all of out code inside this folder. 
 
-You are now in `Chap-50-Counter-App-events` branch. Go to [react-app](./react-app/) folder for tutorial.
+You are now in `Chap-60-Counter-App-multiple-comps` branch. Go to [react-app](./react-app/) folder for tutorial.
 
-If you have completed `Chap-50` switch to `Chap-60` for next tutorial.
+If you have completed `Chap-60` switch to `Chap-70` for next tutorial.
