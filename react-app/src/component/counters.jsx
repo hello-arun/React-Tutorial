@@ -12,16 +12,23 @@ class Counters extends Component {
     render() {
         return (
             <React.Fragment>
-                <ul>
-                    {this.state.counters.map((counter) => (
-                        <li>
-                            <Counter key={counter.id} value={counter.value} />
-                        </li>
-                    ))}
-                </ul>
+                {this.state.counters.map((counter) => (
+                    <Counter
+                        key={counter.id}
+                        id={counter.id}
+                        value={counter.value}
+                        onDelete={this.handleDelete}
+                    />
+                ))}
             </React.Fragment>
         );
     }
+
+    handleDelete = (counterId) => {
+        console.log("Event Handler Called", counterId);
+        const counters = this.state.counters.filter((c) => c.id !== counterId);
+        this.setState({ counters });
+    };
 }
 
 export default Counters;

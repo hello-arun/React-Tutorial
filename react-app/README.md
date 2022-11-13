@@ -201,18 +201,22 @@ Adding event hadeling is easy. We just have to add the method that should be cal
         console.log("Increment Clicked",this);
     };
 ```
+
 But the issue is that we can not access `this` in `handleIncrement` because by-default it is not bind to this component. The most easy solution to this problem is to use arrow function `=>` such as
+
 ```jsx
-    handleIncrement = () =>{
-        this.state.count +=1
-        console.log("Increment Clicked",this);
-    };
+handleIncrement = () => {
+    this.state.count += 1;
+    console.log("Increment Clicked", this);
+};
 ```
-But there is one more problem although we can  directly change state.count property but it will not be reflected in the website view that we are hoping for. Solution?
+
+But there is one more problem although we can directly change state.count property but it will not be reflected in the website view that we are hoping for. Solution?
+
 ```jsx
-    handleIncrement = () => {
-        this.setState({ count: this.state.count + 1 });
-    };
+handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+};
 ```
 
 ## Chapter 60 Multiple Components
@@ -225,23 +229,61 @@ Watch `src/component/counters.jsx` to see how we can reuse an component multiple
 One thing worth mentioning here is about components `props`. We discuss it here...
 
 ### `props` vs `state`
+
 If you see in `src/component/counters.jsx` we have included multiple `Counter` component as shown. Also we have added two properties to
 this component `key` and `value`.
 
 ```jsx
 <Counter key={counter.id} value={counter.value} />
 ```
+
 later in `src/component/counter.jsx` we have used `this.props` to access these values
+
 ```jsx
-    state = {
-        value: this.props.value,
-    };
-``` 
+state = {
+    value: this.props.value,
+};
+```
 
-- So `props` is used generally for initilization purposes. Additionally `state` variable is local a perticular component whereas `props` 
-have scope outside of that component also.
+-   So `props` is used generally for initilization purposes. Additionally `state` variable is local a perticular component whereas `props`
+    have scope outside of that component also.
 
-- Also `props` are read only. Their value can not be changed inside component.
+-   Also `props` are read only. Their value can not be changed inside component.
+
+## Chapter 70 Counter More Events
+
+Suppose we also add abilty to delete a counter as shown
+
+![](__ref/delete-1.png)
+
+This brings us to a very important rule of REACT.
+
+### Major Rule of Thumb React
+
+**_The component that owns a piece of the state, should be the one modifying it._**
+
+Since we are controlling number of counters from `src/component/counters.jsx` so the delete functionality should be implemented inside the same component.
+
+**_Since we have added the delete button inside the counter.jsx and want to implement delete functionality from counters.jsx. How will we do it?_**
+
+### Raise and Handle Evenet
+
+So the Solution is that `Counter` component will raise event to `Counters` component and `Counters` will handle the delete event.
+
+![](__ref/delete-2.png)
+
+While raising event to `Counters` component we also have to provide componentId so that it can know which element to remove. But we can not assign a method with parameters to
+`Counter` `onClick`. So we have to use arrow function as shown
+
+```jsx
+// in counter.jsx
+<button
+    onClick={() => this.props.onDelete(this.props.id)}
+    className="btn btn-danger btn-sm m-2"
+>
+    Delete
+</button>
+```
 
 ## How to run
 
@@ -263,4 +305,4 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Switch to `Chap-60` for next chapter.
+Switch to `Chap-80` for next chapter.

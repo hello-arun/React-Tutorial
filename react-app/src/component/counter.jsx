@@ -9,7 +9,7 @@ class Counter extends Component {
         let classes = "badge m-2 badge-";
         classes += this.state.value === 0 ? "warning" : "primary";
         return (
-            <React.Fragment>
+            <div>
                 <span className={classes}>{this.formatCount()}</span>
                 <button
                     onClick={this.handleIncrement}
@@ -17,7 +17,13 @@ class Counter extends Component {
                 >
                     Increment
                 </button>
-            </React.Fragment>
+                <button
+                    onClick={() => this.props.onDelete(this.props.id)}
+                    className="btn btn-danger btn-sm m-2"
+                >
+                    Delete
+                </button>
+            </div>
         );
     }
 
