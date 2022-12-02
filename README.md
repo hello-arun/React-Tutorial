@@ -7,7 +7,7 @@ By using `create-react-app` we can initialize empty react app instantly for deve
 ```
 npm i -g create-react-app
 ## or the newer version
-npx create-react-app
+npx create-react-app my-app
 ```
 
 ## Create an empty react app
