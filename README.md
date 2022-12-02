@@ -6,6 +6,8 @@ First of all we need node and node-package-manager(npm).
 By using `create-react-app` we can initialize empty react app instantly for development.
 ```
 npm i -g create-react-app
+## or the newer version
+npx create-react-app
 ```
 
 ## Create an empty react app
